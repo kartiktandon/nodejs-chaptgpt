@@ -6,8 +6,8 @@ const model = genai.getGenerativeModel({model:"gemini-1.5-flash"});
 
 export const getData = async(req,res) => {
         const response = await getResponse(req.body.question)
-        res.send(response)
-          
+        const json = { response: response };
+        res.send(json)        
 }
 
 async function getResponse(question){
