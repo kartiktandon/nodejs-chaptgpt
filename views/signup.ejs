@@ -9,7 +9,7 @@
         /* General body styling */
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f0f2f5;
+            background-color: #e4f1f5;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,71 +20,102 @@
 
         /* Container for the form */
         .signup-container {
-            background-color: white;
+            background-color: #fff;
             width: 100%;
-            max-width: 400px;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 480px;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .signup-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
         }
 
         /* Header styling */
         .signup-container h2 {
-            font-size: 24px;
+            font-size: 32px;
             color: #333;
             margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
         /* Input fields styling */
         input[type="text"], input[type="email"], input[type="password"] {
             width: 100%;
-            padding: 15px;
-            margin: 10px 0;
+            padding: 18px;
+            margin: 15px 0;
             border: 2px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 16px;
             outline: none;
-            transition: border-color 0.3s ease;
+            background-color: #fafafa;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
             border-color: #4CAF50;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
         }
 
         /* Submit button styling */
         .signup-btn {
             width: 100%;
-            padding: 15px;
+            padding: 18px;
             background-color: #4CAF50;
             color: white;
             font-size: 18px;
+            font-weight: 600;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         .signup-btn:hover {
             background-color: #45a049;
+            transform: translateY(-3px);
         }
 
-        /* Link to login page */
+        .signup-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Link to Login page */
         .login-link {
-            margin-top: 15px;
-            font-size: 14px;
-            color: #555;
+            margin-top: 20px;
+            font-size: 15px;
+            color: #777;
+            letter-spacing: 0.5px;
         }
 
         .login-link a {
             color: #4CAF50;
             text-decoration: none;
+            font-weight: 500;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
         }
 
         /* Responsive styling */
         @media (max-width: 500px) {
             .signup-container {
                 width: 90%;
+                padding: 35px;
+            }
+
+            .signup-container h2 {
+                font-size: 28px;
+            }
+
+            .signup-btn {
+                font-size: 16px;
             }
         }
     </style>
@@ -94,9 +125,9 @@
     <div class="signup-container">
         <h2>Create an Account</h2>
         <form action="/signup" method="POST">
-            <input type="text" id="username" required name="username" placeholder="Username" required>
-            <input type="email" id="email" required name="email" placeholder="EmailAddress" required>
-            <input type="password" id="password" required name="password" placeholder="Password" required>
+            <input type="text" id="username" required name="username" placeholder="Username">
+            <input type="email" id="email" required name="email" placeholder="Email Address">
+            <input type="password" id="password" required name="password" placeholder="Password">
             <button type="submit" class="signup-btn">Sign Up</button>
         </form>
 
