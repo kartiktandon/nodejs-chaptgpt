@@ -12,7 +12,7 @@ export const getData = async(req,res) => {
 
 async function getResponse(question){
     const result  = await model.generateContent(question);
-          const completionText = result.response.text()
-          return completionText
+    const completionText = result.response.text()
+     return completionText
   }
 
